@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F5317CE-7AEA-441E-8A8E-661C511C4B73}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebFormBootstrapCrud</RootNamespace>
+    <AssemblyName>WebFormBootstrapCrud</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Images\2via.png" />
+    <Content Include="Images\aba_liquido.gif" />
+    <Content Include="Images\aba_liquido_2.gif" />
+    <Content Include="Images\aba_periodo.gif" />
+    <Content Include="Images\aba_periodo_2.gif" />
+    <Content Include="Images\addProcesso.gif" />
+    <Content Include="Images\addSemEfeito.gif" />
+    <Content Include="Images\Arrow.gif" />
+    <Content Include="Images\arrow_down.gif" />
+    <Content Include="Images\arrow_up.gif" />
+    <Content Include="Images\atualizar.gif" />
+    <Content Include="Images\BackGroundToolBar.gif" />
+    <Content Include="Images\baixo_300.gif" />
+    <Content Include="Images\baixo_400.gif" />
+    <Content Include="Images\baixo_480.gif" />
+    <Content Include="Images\baixo_700.gif" />
+    <Content Include="Images\baixo_central_relatorios.gif" />
+    <Content Include="Images\baixo_central_relatorios_550.gif" />
+    <Content Include="Images\baixo_login.gif" />
+    <Content Include="Images\baixo_login.png" />
+    <Content Include="Images\baixo_modal_790px.gif" />
+    <Content Include="Images\baixo_modal_900px.gif" />
+    <Content Include="Images\baixo_portal_segurado.gif" />
+    <Content Include="Images\barra_enquete_dir.gif" />
+    <Content Include="Images\barra_enquete_esq.gif" />
+    <Content Include="Images\barra_enquete_meio.gif" />
+    <Content Include="Images\BC.gif" />
+    <Content Include="Images\BD.gif" />
+    <Content Include="Images\BE.gif" />
+    <Content Include="Images\bg-menu-main.png" />
+    <Content Include="Images\biometria\Biometria.jpg" />
+    <Content Include="Images\biometria\Biometria1.jpg" />
+    <Content Include="Images\biometria\Biometria11.jpg" />
+    <Content Include="Images\biometria\Biometria2.jpg" />
+    <Content Include="Images\biometria\Biometria22.jpg" />
+    <Content Include="Images\biometria\Biometria3.jpg" />
+    <Content Include="Images\biometria\Biometria33.jpg" />
+    <Content Include="Images\biometria\Biometria4.jpg" />
+    <Content Include="Images\biometria\Biometria44.jpg" />
+    <Content Include="Images\biometria\Biometria5.jpg" />
+    <Content Include="Images\biometria\Biometria55.jpg" />
+    <Content Include="Images\biometria\BiometriaNova.jpg" />
+    <Content Include="Images\biometria\direita.gif" />
+    <Content Include="Images\biometria\esquerda.gif" />
+    <Content Include="Images\biometria\jquery.maphilight.min.js" />
+    <Content Include="Images\bk\fundo_botoes.jpg" />
+    <Content Include="Images\bk\fundo_campos.jpg" />
+    <Content Include="Images\bk\fundo_logo.jpg" />
+    <Content Include="Images\bk\fundo_page.jpg" />
+    <Content Include="Images\Botoes\alterar.gif" />
+    <Content Include="Images\Botoes\apagar_textbox.gif" />
+    <Content Include="Images\Botoes\apagar_textbox_desabilitado.gif" />
+    <Content Include="Images\Botoes\apagar_textbox_S.gif" />
+    <Content Include="Images\Botoes\btn_marcar.gif" />
+    <Content Include="Images\Botoes\btn_marcar_over.gif" />
+    <Content Include="Images\Botoes\btn_simular.gif" />
+    <Content Include="Images\Botoes\Calc.gif" />
+    <Content Include="Images\Botoes\Calc_S.gif" />
+    <Content Include="Images\Botoes\Calendario.gif" />
+    <Content Include="Images\Botoes\consultar.gif" />
+    <Content Include="Images\Botoes\deletar.gif" />
+    <Content Include="Images\Botoes\Lupa.gif" />
+    <Content Include="Images\Botoes\Lupa_desabilitado.gif" />
+    <Content Include="Images\Botoes\Lupa_S.gif" />
+    <Content Include="Images\Botoes\novo.gif" />
+    <Content Include="Images\Botoes\NumericDown.gif" />
+    <Content Include="Images\Botoes\NumericUp.gif" />
+    <Content Include="Images\Botoes\pagenav_anterior.gif" />
+    <Content Include="Images\Botoes\pagenav_anterior_desabilitado.gif" />
+    <Content Include="Images\Botoes\pagenav_inicio.gif" />
+    <Content Include="Images\Botoes\pagenav_inicio_desabilitado.gif" />
+    <Content Include="Images\Botoes\pagenav_primeiro.gif" />
+    <Content Include="Images\Botoes\pagenav_primeiro_desabilitado.gif" />
+    <Content Include="Images\Botoes\pagenav_proximo.gif" />
+    <Content Include="Images\Botoes\pagenav_proximo_desabilitado.gif" />
+    <Content Include="Images\Botoes\pagenav_ultimo.gif" />
+    <Content Include="Images\Botoes\pagenav_ultimo_desabilitado.gif" />
+    <Content Include="Images\Botoes\pesquisar.gif" />
+    <Content Include="Images\bottom_ballon.gif" />
+    <Content Include="Images\bottom_ballon2.gif" />
+    <Content Include="Images\btnAcessar.png" />
+    <Content Include="Images\btnDigital.png" />
+    <Content Include="Images\btnDigital2.png" />
+    <Content Include="Images\btnDigital3.png" />
+    <Content Include="Images\btnEcpf.png" />
+    <Content Include="Images\btnEcpf2.png" />
+    <Content Include="Images\btnEcpf3.png" />
+    <Content Include="Images\btnImprimir.gif" />
+    <Content Include="Images\btnLoginSenha.png" />
+    <Content Include="Images\btnLoginSenha2.png" />
+    <Content Include="Images\btn_beneficio.gif" />
+    <Content Include="Images\btn_beneficio2.gif" />
+    <Content Include="Images\btn_cadastro_origem.gif" />
+    <Content Include="Images\btn_cadastro_origem2.gif" />
+    <Content Include="Images\btn_cadastro_origem_instituidor.gif" />
+    <Content Include="Images\btn_cadastro_origem_instituidor2.gif" />
+    <Content Include="Images\btn_cargo_ocupado.gif" />
+    <Content Include="Images\btn_cargo_ocupado1.gif" />
+    <Content Include="Images\btn_cargo_ocupado2.gif" />
+    <Content Include="Images\btn_cargo_ocupado22.gif" />
+    <Content Include="Images\btn_cargo_ocupado_disabled.gif" />
+    <Content Include="Images\btn_certidao_tmp.gif" />
+    <Content Include="Images\btn_certidao_tmp2.gif" />
+    <Content Include="Images\btn_certidao_tmp_disabled.gif" />
+    <Content Include="Images\btn_comp_remuneratoria.gif" />
+    <Content Include="Images\btn_comp_remuneratoria2.gif" />
+    <Content Include="Images\btn_comp_remuneratoria_disabled.gif" />
+    <Content Include="Images\btn_dependentes.gif" />
+    <Content Include="Images\btn_dependentes2.gif" />
+    <Content Include="Images\btn_dependentes_disabled.gif" />
+    <Content Include="Images\btn_extrato.gif" />
+    <Content Include="Images\btn_extrato2.gif" />
+    <Content Include="Images\btn_extrato_disabled.gif" />
+    <Content Include="Images\btn_ficha_cadastral.gif" />
+    <Content Include="Images\btn_ficha_cadastral2.gif" />
+    <Content Include="Images\btn_ficha_cadastral_disabled.gif" />
+    <Content Include="Images\btn_frequencia.gif" />
+    <Content Include="Images\btn_frequencia1.gif" />
+    <Content Include="Images\btn_frequencia2.gif" />
+    <Content Include="Images\btn_frequencia22.gif" />
+    <Content Include="Images\btn_gerador_sql.gif" />
+    <Content Include="Images\btn_gerador_sql1.gif" />
+    <Content Include="Images\btn_infos_adicionais.gif" />
+    <Content Include="Images\btn_infos_adicionais2.gif" />
+    <Content Include="Images\btn_infos_adicionais_disabled.gif" />
+    <Content Include="Images\btn_inf_adicionais.gif" />
+    <Content Include="Images\btn_inf_adicionais2.gif" />
+    <Content Include="Images\btn_inf_adicionais_disabled.gif" />
+    <Content Include="Images\btn_portal_dados_pessoais.gif" />
+    <Content Include="Images\btn_portal_dados_pessoais2.gif" />
+    <Content Include="Images\btn_portal_dados_pessoais_disabled.gif" />
+    <Content Include="Images\btn_posto_graduacao.gif" />
+    <Content Include="Images\btn_posto_graduacao2.gif" />
+    <Content Include="Images\btn_posto_graduacao_disabled.gif" />
+    <Content Include="Images\btn_processo_adm.gif" />
+    <Content Include="Images\btn_processo_adm2.gif" />
+    <Content Include="Images\btn_recad_agendamento.gif" />
+    <Content Include="Images\btn_recad_agendamento2.gif" />
+    <Content Include="Images\btn_recad_checklist.gif" />
+    <Content Include="Images\btn_recad_checklist2.gif" />
+    <Content Include="Images\btn_recad_config.gif" />
+    <Content Include="Images\btn_recad_config2.gif" />
+    <Content Include="Images\btn_recad_cronograma.gif" />
+    <Content Include="Images\btn_recad_cronograma2.gif" />
+    <Content Include="Images\btn_remuneracoes.gif" />
+    <Content Include="Images\btn_remuneracoes1.gif" />
+    <Content Include="Images\btn_remuneracoes2.gif" />
+    <Content Include="Images\btn_remuneracoes22.gif" />
+    <Content Include="Images\btn_remuneracoes_disabled.gif" />
+    <Content Include="Images\btn_sim_bene.gif" />
+    <Content Include="Images\btn_sim_bene2.gif" />
+    <Content Include="Images\btn_sim_bene_disabled.gif" />
+    <Content Include="Images\btn_tmp_contrib_anterior.gif" />
+    <Content Include="Images\btn_tmp_contrib_anterior2.gif" />
+    <Content Include="Images\btn_tmp_contrib_anterior_disabled.gif" />
+    <Content Include="Images\cadeado.gif" />
+    <Content Include="Images\caixaLogin.png" />
+    <Content Include="Images\CaixaMediaBaixo.gif" />
+    <Content Include="Images\CaixaMediaMeio.gif" />
+    <Content Include="Images\CaixaMediaTopo.gif" />
+    <Content Include="Images\caixa_msg.png" />
+    <Content Include="Images\check.png" />
+    <Content Include="Images\collapse.jpg" />
+    <Content Include="Images\collapse_blue.jpg" />
+    <Content Include="Images\conf.jpg" />
+    <Content Include="Images\conf.png" />
+    <Content Include="Images\conf1.gif" />
+    <Content Include="Images\conf2.gif" />
+    <Content Include="Images\conferencia.gif" />
+    <Content Include="Images\curva_b_dir.gif" />
+    <Content Include="Images\curva_b_esq.gif" />
+    <Content Include="Images\curva_dir_bot_caixa.gif" />
+    <Content Include="Images\curva_dir_caixa.gif" />
+    <Content Include="Images\curva_esq_bot_caixa.gif" />
+    <Content Include="Images\curva_esq_caixa.gif" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\direito_logado.gif" />
+    <Content Include="Images\divPontilhada.gif" />
+    <Content Include="Images\divPontilhadaV.gif" />
+    <Content Include="Images\div_linha_caixa.gif" />
+    <Content Include="Images\div_txt_logo.gif" />
+    <Content Include="Images\DotBlack.jpg" />
+    <Content Include="Images\dot_cinza.gif" />
+    <Content Include="Images\estornar12x12.gif" />
+    <Content Include="Images\expand.jpg" />
+    <Content Include="Images\expand_blue.jpg" />
+    <Content Include="Images\fechar.fw.png" />
+    <Content Include="Images\FundoLogado.png" />
+    <Content Include="Images\FundoLogin.png" />
+    <Content Include="Images\fundo_botoes.gif" />
+    <Content Include="Images\fundo_botoes.jpg" />
+    <Content Include="Images\fundo_caixa_texto.gif" />
+    <Content Include="Images\fundo_campos.jpg" />
+    <Content Include="Images\fundo_linha_baixo.gif" />
+    <Content Include="Images\fundo_linha_caixa.gif" />
+    <Content Include="Images\fundo_logado.gif" />
+    <Content Include="Images\fundo_logo.jpg" />
+    <Content Include="Images\fundo_page.jpg" />
+    <Content Include="Images\fundo_tipos_beneficios.gif" />
+    <Content Include="Images\Grid\6.gif" />
+    <Content Include="Images\Grid\closed.gif" />
+    <Content Include="Images\Grid\DeletedItems.gif" />
+    <Content Include="Images\Grid\Drafts.gif" />
+    <Content Include="Images\Grid\Excluir.gif" />
+    <Content Include="Images\Grid\Inbox.gif" />
+    <Content Include="Images\Grid\incluir.gif" />
+    <Content Include="Images\Grid\JunkE-mail.gif" />
+    <Content Include="Images\Grid\Loading.gif" />
+    <Content Include="Images\Grid\mailFlag.gif" />
+    <Content Include="Images\Grid\mailFlagRed.gif" />
+    <Content Include="Images\Grid\mailIcon.gif" />
+    <Content Include="Images\Grid\Outbox.gif" />
+    <Content Include="Images\Grid\Outbox_out.gif" />
+    <Content Include="Images\Grid\outlookBarTop.gif" />
+    <Content Include="Images\Grid\PersonalFolders.gif" />
+    <Content Include="Images\Grid\refresh.gif" />
+    <Content Include="Images\Grid\resizeHeader.gif" />
+    <Content Include="Images\Grid\SearchFolders.gif" />
+    <Content Include="Images\Grid\SentItems.gif" />
+    <Content Include="Images\Grid\topBg.gif" />
+    <Content Include="Images\header-opened.png" />
+    <Content Include="Images\IconesTreeView\16-circle-blue-add.png" />
+    <Content Include="Images\IconesTreeView\16-circle-blue-remove.png" />
+    <Content Include="Images\IconesTreeView\16-circle-red-remove.png" />
+    <Content Include="Images\IconesTreeView\16-cube-blue.png" />
+    <Content Include="Images\IconesTreeView\arrow_refresh.png" />
+    <Content Include="Images\IconesTreeView\collapsable-last.gif" />
+    <Content Include="Images\IconesTreeView\collapsable.gif" />
+    <Content Include="Images\IconesTreeView\cross.png" />
+    <Content Include="Images\IconesTreeView\disk.png" />
+    <Content Include="Images\IconesTreeView\expandable-last.gif" />
+    <Content Include="Images\IconesTreeView\expandable.gif" />
+    <Content Include="Images\IconesTreeView\folder_add.png" />
+    <Content Include="Images\IconesTreeView\folder_delete.png" />
+    <Content Include="Images\IconesTreeView\folder_edit.png" />
+    <Content Include="Images\IconesTreeView\leaf-last.gif" />
+    <Content Include="Images\IconesTreeView\leaf.gif" />
+    <Content Include="Images\IconesTreeView\line_bg.gif" />
+    <Content Include="Images\IconesTreeView\line_bg_over.gif" />
+    <Content Include="Images\IconesTreeView\line_bg_over_last.gif" />
+    <Content Include="Images\IconesTreeView\meio.gif" />
+    <Content Include="Images\IconesTreeView\minus.gif" />
+    <Content Include="Images\IconesTreeView\page_add.png" />
+    <Content Include="Images\IconesTreeView\page_delete.png" />
+    <Content Include="Images\IconesTreeView\page_edit.png" />
+    <Content Include="Images\IconesTreeView\plus.gif" />
+    <Content Include="Images\IconesTreeView\root.gif" />
+    <Content Include="Images\IconesTreeView\spacer.gif" />
+    <Content Include="Images\IconesTreeView\spinner.gif" />
+    <Content Include="Images\IconesTreeView\tree_line.gif" />
+    <Content Include="Images\IconesTreeView\_leaf-last.gif" />
+    <Content Include="Images\IconesTreeView\_leaf.gif" />
+    <Content Include="Images\icones\about.gif" />
+    <Content Include="Images\icones\about.png" />
+    <Content Include="Images\icones\about_peq.gif" />
+    <Content Include="Images\icones\alterar.gif" />
+    <Content Include="Images\icones\aplicacao.gif" />
+    <Content Include="Images\icones\arrow-circle-135-left.png" />
+    <Content Include="Images\icones\arrow-circle.png" />
+    <Content Include="Images\icones\arrow-out.png" />
+    <Content Include="Images\icones\arrow_refresh.png" />
+    <Content Include="Images\icones\atualizar.gif" />
+    <Content Include="Images\icones\avancar.gif" />
+    <Content Include="Images\icones\Avancar2.png" />
+    <Content Include="Images\icones\Banco.png" />
+    <Content Include="Images\icones\biometria.gif" />
+    <Content Include="Images\icones\btnIRRF.gif" />
+    <Content Include="Images\icones\calc.gif" />
+    <Content Include="Images\icones\Calendario.gif" />
+    <Content Include="Images\icones\cancel.png" />
+    <Content Include="Images\icones\cancelar.gif" />
+    <Content Include="Images\icones\cancelarGrid.gif" />
+    <Content Include="Images\icones\cheque.gif" />
+    <Content Include="Images\icones\conciliar.gif" />
+    <Content Include="Images\icones\contatos.gif" />
+    <Content Include="Images\icones\deletar.gif" />
+    <Content Include="Images\icones\delete.gif" />
+    <Content Include="Images\icones\dependentes.gif" />
+    <Content Include="Images\icones\desconcluir.png" />
+    <Content Include="Images\icones\descontojudicial.png" />
+    <Content Include="Images\icones\disco.gif" />
+    <Content Include="Images\icones\document.gif" />
+    <Content Include="Images\icones\down.gif" />
+    <Content Include="Images\icones\duplicacao-de-documentos-MARCADO.png" />
+    <Content Include="Images\icones\duplicacao-de-documentos.png" />
+    <Content Include="Images\icones\edit.gif" />
+    <Content Include="Images\icones\edit_disabled.gif" />
+    <Content Include="Images\icones\efetivar.gif" />
+    <Content Include="Images\icones\encaminhar_mensagem.gif" />
+    <Content Include="Images\icones\enviartce.png" />
+    <Content Include="Images\icones\estornar.gif" />
+    <Content Include="Images\icones\estornar12x12.gif" />
+    <Content Include="Images\icones\excel.gif" />
+    <Content Include="Images\icones\excluir.gif" />
+    <Content Include="Images\icones\ExcluirDefinitivo.gif" />
+    <Content Include="Images\icones\executar.gif" />
+    <Content Include="Images\icones\explicacao.gif" />
+    <Content Include="Images\icones\Financeira.png" />
+    <Content Include="Images\icones\folder.gif" />
+    <Content Include="Images\icones\folderopen.gif" />
+    <Content Include="Images\icones\folder_find.png" />
+    <Content Include="Images\icones\folder_key.png" />
+    <Content Include="Images\icones\folhas.png" />
+    <Content Include="Images\icones\funcionalidades.png" />
+    <Content Include="Images\icones\HoleriteMensal.png" />
+    <Content Include="Images\icones\HoleriteSuplementar.png" />
+    <Content Include="Images\icones\house.png" />
+    <Content Include="Images\icones\icon_acompanhamento_processos.gif" />
+    <Content Include="Images\icones\icon_anexo.gif" />
+    <Content Include="Images\icones\icon_bloquear.gif" />
+    <Content Include="Images\icones\icon_bloquear_disable.gif" />
+    <Content Include="Images\icones\icon_boleto.gif" />
+    <Content Include="Images\icones\icon_cadastro_segurados.gif" />
+    <Content Include="Images\icones\icon_central_relatorios.gif" />
+    <Content Include="Images\icones\icon_converte_datas.gif" />
+    <Content Include="Images\icones\icon_converte_datas_peq.gif" />
+    <Content Include="Images\icones\icon_dependentes_14x14.gif" />
+    <Content Include="Images\icones\icon_desimplantar14x14.gif" />
+    <Content Include="Images\icones\icon_desmarcar_todos.gif" />
+    <Content Include="Images\icones\icon_divisao.gif" />
+    <Content Include="Images\icones\icon_email.gif" />
+    <Content Include="Images\icones\icon_email_novo.gif" />
+    <Content Include="Images\icones\icon_enviar_email.gif" />
+    <Content Include="Images\icones\icon_etiquetas.gif" />
+    <Content Include="Images\icones\icon_gerar_beneficio14x14.gif" />
+    <Content Include="Images\icones\icon_gerar_implantar14x14.gif" />
+    <Content Include="Images\icones\icon_lupa_voltar.gif" />
+    <Content Include="Images\icones\icon_mais.gif" />
+    <Content Include="Images\icones\icon_marcar_todos.gif" />
+    <Content Include="Images\icones\icon_menos.gif" />
+    <Content Include="Images\icones\icon_multi.gif" />
+    <Content Include="Images\icones\icon_parent_abre.gif" />
+    <Content Include="Images\icones\icon_parent_fecha.gif" />
+    <Content Include="Images\icones\icon_protocolo.gif" />
+    <Content Include="Images\icones\icon_recadastramento.gif" />
+    <Content Include="Images\icones\icon_requisitos.gif" />
+    <Content Include="Images\icones\icon_requisitos2.gif" />
+    <Content Include="Images\icones\icon_revisao.gif" />
+    <Content Include="Images\icones\icon_scanner.gif" />
+    <Content Include="Images\icones\icon_simulacao.gif" />
+    <Content Include="Images\icones\icon_webcam.gif" />
+    <Content Include="Images\icones\id_pessoa.png" />
+    <Content Include="Images\icones\impressora.gif" />
+    <Content Include="Images\icones\Inserir_Editar.gif" />
+    <Content Include="Images\icones\key_36371.png" />
+    <Content Include="Images\icones\key_add.png" />
+    <Content Include="Images\icones\key_add_disable.png" />
+    <Content Include="Images\icones\last_line.gif" />
+    <Content Include="Images\icones\limpar.gif" />
+    <Content Include="Images\icones\line.gif" />
+    <Content Include="Images\icones\lock.gif" />
+    <Content Include="Images\icones\maximizar.png" />
+    <Content Include="Images\icones\mime_pdf.png" />
+    <Content Include="Images\icones\minimizar.png" />
+    <Content Include="Images\icones\mover.gif" />
+    <Content Include="Images\icones\mover_mensagem.gif" />
+    <Content Include="Images\icones\msg_salvar.gif" />
+    <Content Include="Images\icones\nova_mensagem.gif" />
+    <Content Include="Images\icones\Novo.gif" />
+    <Content Include="Images\icones\novosegurado.png" />
+    <Content Include="Images\icones\ok.png" />
+    <Content Include="Images\icones\openoffice.png" />
+    <Content Include="Images\icones\pdf.png" />
+    <Content Include="Images\icones\pdf2.png" />
+    <Content Include="Images\icones\pdf3.gif" />
+    <Content Include="Images\icones\pdf3.png" />
+    <Content Include="Images\icones\Pesquisa.gif" />
+    <Content Include="Images\icones\portal1.gif" />
+    <Content Include="Images\icones\portal2.gif" />
+    <Content Include="Images\icones\portal3.gif" />
+    <Content Include="Images\icones\portal4.gif" />
+    <Content Include="Images\icones\portal5.gif" />
+    <Content Include="Images\icones\portal6.gif" />
+    <Content Include="Images\icones\portal7.gif" />
+    <Content Include="Images\icones\portal8.gif" />
+    <Content Include="Images\icones\portal9.gif" />
+    <Content Include="Images\icones\processo_militar.gif" />
+    <Content Include="Images\icones\receber.gif" />
+    <Content Include="Images\icones\receber_14x14.gif" />
+    <Content Include="Images\icones\refresh.gif" />
+    <Content Include="Images\icones\RendimentosPagos.png" />
+    <Content Include="Images\icones\replicar.png" />
+    <Content Include="Images\icones\replicarcadastro.png" />
+    <Content Include="Images\icones\responder_mensagem.gif" />
+    <Content Include="Images\icones\salvar.gif" />
+    <Content Include="Images\icones\seta_pra_baixo.gif" />
+    <Content Include="Images\icones\seta_pra_cima.GIF" />
+    <Content Include="Images\icones\status.png" />
+    <Content Include="Images\icones\tmp_cont_afast.gif" />
+    <Content Include="Images\icones\tmp_cont_cargo.gif" />
+    <Content Include="Images\icones\tmp_cont_cargo1.gif" />
+    <Content Include="Images\icones\tramitar.gif" />
+    <Content Include="Images\icones\unlock.gif" />
+    <Content Include="Images\icones\up.gif" />
+    <Content Include="Images\icones\verificar_mensagens.gif" />
+    <Content Include="Images\icones\visto.gif" />
+    <Content Include="Images\icones\visualizar.gif" />
+    <Content Include="Images\icones\visualizarx.gif" />
+    <Content Include="Images\icones\voltar.gif" />
+    <Content Include="Images\icones\voltar_mensagem.gif" />
+    <Content Include="Images\icones\voltar_pesquisa.gif" />
+    <Content Include="Images\icones\warning.png" />
+    <Content Include="Images\icones\word.png" />
+    <Content Include="Images\icones\zip.png" />
+    <Content Include="Images\icon_ctc.gif" />
+    <Content Include="Images\icon_ctc.png" />
+    <Content Include="Images\icon_doc.png" />
+    <Content Include="Images\icon_segurado_grande.gif" />
+    <Content Include="Images\imgBloqueado.png" />
+    <Content Include="Images\lad_dir_caixa.gif" />
+    <Content Include="Images\lad_esq_caixa.gif" />
+    <Content Include="Images\lat_dir.gif" />
+    <Content Include="Images\lat_esq.gif" />
+    <Content Include="Images\linha_bott_caixa.gif" />
+    <Content Include="Images\linha_bot_caixa.gif" />
+    <Content Include="Images\linha_dir_caixa.gif" />
+    <Content Include="Images\linha_esq_caixa.gif" />
+    <Content Include="Images\linha_top_caixa.gif" />
+    <Content Include="Images\logo_agenda.gif" />
+    <Content Include="Images\logo_agenda_grande.gif" />
+    <Content Include="Images\logo_sisprev_web.gif" />
+    <Content Include="Images\MC.gif" />
+    <Content Include="Images\MD.gif" />
+    <Content Include="Images\ME.gif" />
+    <Content Include="Images\meio_300.gif" />
+    <Content Include="Images\meio_400.gif" />
+    <Content Include="Images\meio_480.gif" />
+    <Content Include="Images\meio_700.gif" />
+    <Content Include="Images\meio_central_relatorios.gif" />
+    <Content Include="Images\meio_central_relatorios_550.gif" />
+    <Content Include="Images\meio_login.gif" />
+    <Content Include="Images\meio_login.png" />
+    <Content Include="Images\meio_modal_790px.gif" />
+    <Content Include="Images\meio_modal_900px.gif" />
+    <Content Include="Images\meio_portal_segurado.gif" />
+    <Content Include="Images\moldura_foto_inicial.gif" />
+    <Content Include="Images\monitor.gif" />
+    <Content Include="Images\preload.gif" />
+    <Content Include="Images\Separador.gif" />
+    <Content Include="Images\SetaTitulo.png" />
+    <Content Include="Images\spacer.gif" />
+    <Content Include="Images\standard_hover.gif" />
+    <Content Include="Images\standard_hover.png" />
+    <Content Include="Images\standard_press.gif" />
+    <Content Include="Images\standard_press.png" />
+    <Content Include="Images\TC.gif" />
+    <Content Include="Images\TD.gif" />
+    <Content Include="Images\TE.gif" />
+    <Content Include="Images\ToolBarBg.gif" />
+    <Content Include="Images\topo_300.gif" />
+    <Content Include="Images\topo_400.gif" />
+    <Content Include="Images\topo_480.gif" />
+    <Content Include="Images\topo_700.gif" />
+    <Content Include="Images\topo_central_relatorios.gif" />
+    <Content Include="Images\topo_login.gif" />
+    <Content Include="Images\topo_login.png" />
+    <Content Include="Images\topo_Modal.gif" />
+    <Content Include="Images\topo_Modal.png" />
+    <Content Include="Images\topo_modal_790px.gif" />
+    <Content Include="Images\topo_modal_900px.gif" />
+    <Content Include="Images\topo_nome_segurado.gif" />
+    <Content Include="Images\topo_popup_modal_550.gif" />
+    <Content Include="Images\topo_popup_modal_com_X.gif" />
+    <Content Include="Images\topo_popup_modal_editor.gif" />
+    <Content Include="Images\top_ballon.gif" />
+    <Content Include="Images\top_ballon1.gif" />
+    <Content Include="Images\top_ballon2.gif" />
+    <Content Include="Images\warning.png" />
+    <Content Include="libman.json" />
+    <Content Include="Images\Botoes\_notes\btn_simular.gif.mno" />
+    <Content Include="Images\Grid\_notes\refresh.gif.mno" />
+    <Content Include="Images\IconesTreeView\.DS_Store" />
+    <Content Include="Images\IconesTreeView\Thumbs.db" />
+    <Content Include="Images\icones\_notes\document.gif.mno" />
+    <Content Include="Images\icones\_notes\explicacao.gif.mno" />
+    <Content Include="Images\icones\_notes\icon_converte_datas.gif.mno" />
+    <Content Include="Images\icones\_notes\icon_email.gif.mno" />
+    <Content Include="Images\icones\_notes\icon_email_novo.gif.mno" />
+    <Content Include="Images\icones\_notes\mover.gif.mno" />
+    <Content Include="Images\icones\_notes\receber.gif.mno" />
+    <Content Include="Images\icones\_notes\receber_14x14.gif.mno" />
+    <Content Include="Images\icones\_notes\tramitar.gif.mno" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery.mask.min.js.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\formatar-textbox.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\sweetalert\messagem-alert.js" />
+    <Content Include="Scripts\sweetalert\sweetalert.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Utilitarios.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51185</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51185/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
