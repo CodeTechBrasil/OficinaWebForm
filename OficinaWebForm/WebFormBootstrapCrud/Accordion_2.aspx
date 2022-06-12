@@ -37,7 +37,7 @@
 
                     <tr>
                         <asp:Repeater ID="dtAccordion" runat="server" OnItemCommand="dtAccordion_ItemCommand" OnItemDataBound="dtAccordion_ItemDataBound" OnItemCreated="dtAccordion_ItemCreated">
-                       
+                         
                             <ItemTemplate>
 
 
@@ -52,7 +52,7 @@
                                                 <tr>
                                                     <td style="padding-left: 20px; width: 150px;">
                                                         <a class="iconColor" style="width: 10px;">
-                                                            <asp:ImageButton Width="20" ImageUrl="~/Content/Image/search_icon.png" ID="btnView" class="iconColor" CommandName="view" runat="server" CommandArgument='<%# Eval("Id") %>' />
+                                                            <asp:ImageButton Width="20" ImageUrl="~/Content/Image/search_icon.png" ID="btnView" class="iconColor" CommandName="view" runat="server"  CommandArgument='<%# Eval("Id") %>' />
                                                         </a>
                                                     </td>
 
@@ -74,7 +74,7 @@
                                                     </td>
 
                                                     <td>
-                                                        <button class="iconColor" style="float: right !important;">
+                                                        <button type="submit" class="iconColor" style="float: right !important;">
                                                             <i class="fas fa-angle-down"></i>
                                                         </button>
                                                     </td>

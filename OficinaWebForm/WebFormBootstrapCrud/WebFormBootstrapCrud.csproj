@@ -610,6 +610,7 @@
     <Content Include="Images\icones\_notes\receber.gif.mno" />
     <Content Include="Images\icones\_notes\receber_14x14.gif.mno" />
     <Content Include="Images\icones\_notes\tramitar.gif.mno" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\accordion.js" />
     <Content Include="Scripts\jquery.mask.min.js.js" />
@@ -651,6 +652,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Content Include="App_Data\Utilitarios.cs" />
     <Compile Include="Accordion.aspx.cs">
       <DependentUpon>Accordion.aspx</DependentUpon>

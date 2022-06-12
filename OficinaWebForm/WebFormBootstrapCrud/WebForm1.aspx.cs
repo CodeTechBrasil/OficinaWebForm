@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace WebFormBootstrapCrud
 {
-    public partial class Accordion_2 : System.Web.UI.Page
+    public partial class WebForm1 : System.Web.UI.Page
     {
         public DataTable Datatable { get; set; } = new DataTable();
 
@@ -76,9 +76,9 @@ namespace WebFormBootstrapCrud
 
 
                 datatable.Rows.Add(i,
-                    "Aplicacao_" + i,
+                    "Aplicacao_ASDFASFASFASFASFASFDASDFASFASFASFASDFSADF" + i,
                     tipoOrdem,
-                    "Cnpj_" + i,
+                    "72.299.964/0001-93",
                     DateTime.Now.ToShortDateString(),
                     DateTime.Now.ToShortTimeString(),
                     "Cateira_" + i,
@@ -86,7 +86,7 @@ namespace WebFormBootstrapCrud
                     "Tipo_" + i,
                     "Preco_" + i,
                     "Segmento_" + i,
-                    string.Format("{0:000.0}",(i * 102.53).ToString()),
+                    string.Format("{0:000.0}", (i * 102.53).ToString()),
                     "Custodiante_" + i,
                     string.Format("{0:000.0}", (i * 1132.53).ToString()),
                     "Gestor_" + i
@@ -108,7 +108,7 @@ namespace WebFormBootstrapCrud
             {
                 //Code for btnTestSeries button clicked  
                 var id = e.CommandArgument.ToString();
-                Response.Write("<script>alert('Test Series Button Clicked "+id+"  ')</script>");
+                Response.Write("<script>alert('Test Series Button Clicked " + id + "  ')</script>");
             }
         }
 
