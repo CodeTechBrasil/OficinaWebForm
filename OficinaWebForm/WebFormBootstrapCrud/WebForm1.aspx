@@ -34,6 +34,7 @@
         .card-header {
             cursor: pointer;
             border-bottom: none;
+            background-color: #FFF;
         }
 
         .card {
@@ -56,7 +57,48 @@
 
     <form id="form1" runat="server">
 
+        <div class="card">
+            <div class="card-header" style="background-color:lightgrey; color:black;">
+                <table>
+                    <tr>
+                        <td>
+                            <span class="title" style="margin-left: -10px;">
+                                 <asp:Label Width="100" runat="server">Visualizar</asp:Label>
+                            </span>
+                        </td>
 
+                        <td>
+                            <span class="title" style="margin-left: -10px">
+                                <asp:Label Width="100" runat="server">Data da Operação</asp:Label>
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="title" style="margin-left: 10px">
+                                 <asp:Label Width="550" runat="server">Aplicação</asp:Label>
+                            </span>
+                        </td>
+
+
+                        <td>
+                            <span class="title" style="margin-right: 10px">
+                                 <asp:Label Width="250" runat="server">Quantidade de Cotas</asp:Label>
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="title">
+                                 <asp:Label   runat="server">Tipo de Origem</asp:Label>
+                            </span>
+
+
+                        </td>
+                        <td></td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
         <div class="accordion" id="accordionExample">
 
             <asp:Repeater ID="dtAccordion" runat="server" OnItemCommand="dtAccordion_ItemCommand" OnItemDataBound="dtAccordion_ItemDataBound" OnItemCreated="dtAccordion_ItemCreated">
@@ -68,7 +110,7 @@
                             <table>
                                 <tr>
                                     <td>
-                                        <span class="title" style="margin-left: 10px; margin-right: 20px">
+                                        <span class="title" style="margin-left: 10px; margin-right: 50px">
                                             <a class="iconColor" style="width: 10px;">
                                                 <asp:ImageButton Width="20" ImageUrl="~/Content/Image/search_icon.png" ID="btnView" class="iconColor" CommandName="view" runat="server" CommandArgument='<%# Eval("Id") %>' />
                                             </a>
@@ -118,7 +160,7 @@
                                         <td>
                                             <span class="title" style="margin-left: 00px; margin-right: 50px">
                                                 <a class="iconColor" style="width: 10px;">
-                                                    <asp:ImageButton  Width="20" Visible="false" ImageUrl="~/Content/Image/search_icon.png" ID="ImageButton1" class="iconColor" CommandName="view" runat="server" CommandArgument='<%# Eval("Id") %>' />
+                                                    <asp:ImageButton Width="20" Visible="false" ImageUrl="~/Content/Image/search_icon.png" ID="ImageButton1" class="iconColor" CommandName="view" runat="server" CommandArgument='<%# Eval("Id") %>' />
                                                 </a>
                                             </span>
                                         </td>
@@ -189,7 +231,7 @@
                                         <td></td>
                                     </tr>
 
-                                     <%-- linha 03 --%>
+                                    <%-- linha 03 --%>
                                     <tr>
                                         <td>
                                             <span class="title" style="margin-left: 00px; margin-right: 50px">
@@ -208,7 +250,7 @@
 
                                         <td>
                                             <span class="title" style="margin-right: 10px">
-                                                <asp:Label  Width="550" CssClass="font-label" runat="server">Tipo de Investimento:&nbsp <%# DataBinder.Eval(Container.DataItem, "Tipo") %></asp:Label>
+                                                <asp:Label Width="550" CssClass="font-label" runat="server">Tipo de Investimento:&nbsp <%# DataBinder.Eval(Container.DataItem, "Tipo") %></asp:Label>
                                             </span>
                                         </td>
 
