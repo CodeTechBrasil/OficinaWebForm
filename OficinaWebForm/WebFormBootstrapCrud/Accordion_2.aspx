@@ -33,11 +33,13 @@
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody class="accordion">
+
                     <tr>
                         <asp:Repeater ID="dtAccordion" runat="server" OnItemCommand="dtAccordion_ItemCommand" OnItemDataBound="dtAccordion_ItemDataBound" OnItemCreated="dtAccordion_ItemCreated">
+                       
                             <ItemTemplate>
-                                <div class="accordion">
+
 
                                     <%-- COMEÇA O ACCORDION --%>
                                     <div class="accordion-item">
@@ -150,8 +152,8 @@
 
                                     </div>
 
-                                </div>
                             </ItemTemplate>
+
                         </asp:Repeater>
                     </tr>
 
