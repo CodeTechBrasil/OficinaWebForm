@@ -45,13 +45,13 @@
     */
         //INICIO ACCORDION
         $(document).on('show', '.accordion', function (e) {
-            //$('.accordion-heading i').toggleClass(' ');
+            $('.accordion-heading i').toggleClass(' ');
             $(e.target).prev('.accordion-heading').addClass('accordion-opened');
         });
 
         $(document).on('hide', '.accordion', function (e) {
             $(this).find('.accordion-heading').not($(e.target)).removeClass('accordion-opened');
-            //$('.accordion-heading i').toggleClass('fa-chevron-right fa-chevron-down');
+            $('.accordion-heading i').toggleClass('fa-chevron-right fa-chevron-down');
         });
 
         //FIM ACCORDION
@@ -265,7 +265,7 @@
             <div class="accordion" id="accordion2">
                 <asp:Repeater ID="dtDados" runat="server">
                     <ItemTemplate>
-                        <div class="accordion-group">
+                        <div class="accordion-group" id="accordion-group-<%# DataBinder.Eval(Container.DataItem, "Id") %>">
                             <div class="accordion-heading">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Collapsible Group Item #1
                                 </a>
