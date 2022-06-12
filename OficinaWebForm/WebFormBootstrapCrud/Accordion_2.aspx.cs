@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace WebFormBootstrapCrud
 {
-    public partial class Accordion : System.Web.UI.Page
+    public partial class Accordion_2 : System.Web.UI.Page
     {
         public DataTable Datatable { get; set; } = new DataTable();
 
@@ -73,22 +73,22 @@ namespace WebFormBootstrapCrud
 
                 if (i % 2 == 0)
                     tipoOrdem = "VENDA";
-               
+
 
                 datatable.Rows.Add(i,
                     "Aplicacao_" + i,
                     tipoOrdem,
                     "Cnpj_" + i,
-                   DateTime.Now.ToShortDateString(),
+                    DateTime.Now.ToShortDateString(),
                     DateTime.Now.ToShortTimeString(),
                     "Cateira_" + i,
                     "Risco_" + i,
                     "Tipo_" + i,
                     "Preco_" + i,
                     "Segmento_" + i,
-                    "Cotas_" + i,
+                    string.Format("{0:000.0}",(i * 102.53).ToString()),
                     "Custodiante_" + i,
-                    "ValorTotal_" + i,
+                    string.Format("{0:000.0}", (i * 1132.53).ToString()),
                     "Gestor_" + i
 
                     );

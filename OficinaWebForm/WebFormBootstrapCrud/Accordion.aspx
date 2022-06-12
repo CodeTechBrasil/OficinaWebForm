@@ -32,111 +32,124 @@
                     </tr>
                 </thead>
             </table>
-            <table>
-                <tr>
-                    <%-- SEGUNDO ACCORDION --%>
-                    <asp:Repeater ID="dtAccordion" runat="server" OnItemCommand="dtAccordion_ItemCommand">
-                        <ItemTemplate>
-                            <div class="accordion">
 
-                                <%-- COMEÇA O ACCORDION --%>
-                                <div class="accordion-item">
-                                    <table class="accordion-header">
-                                        <tr>
-                                            <td style="padding-left: 20px; width: 150px;">
-                                                <a class="iconColor" style="width: 10px;">
-                                                    <asp:ImageButton Width="20" ImageUrl="~/Content/Image/search_icon.png" ID="btnView" class="iconColor" CommandName="view" runat="server" CommandArgument='<%# Eval("Id") %>' />
-                                                </a>
-                                            </td>
+            <div>
+                <table>
+                    <tr>
+                        <%-- SEGUNDO ACCORDION --%>
+                        <asp:Repeater ID="dtAccordion" runat="server" OnItemCommand="dtAccordion_ItemCommand" OnItemDataBound="dtAccordion_ItemDataBound" OnItemCreated="dtAccordion_ItemCreated">
+                            <ItemTemplate>
+                                <div class="accordion">
 
-                                            <td style="width: 150px;">
-                                                <asp:Label runat="server"> <%# DataBinder.Eval(Container.DataItem, "Data") %></asp:Label>
+                                    <%-- COMEÇA O ACCORDION --%>
+                                    <div class="accordion-item">
 
-                                            </td>
+                                        <table class="accordion-header">
 
-                                            <td style="width: 250px;" colspan="4">
-                                                <asp:Label runat="server"> <%# DataBinder.Eval(Container.DataItem, "Aplicacao") %></asp:Label>
-                                            </td>
+                                            <tr>
+                                                <td style="padding-left: 20px; width: 150px;">
+                                                    <a class="iconColor" style="width: 10px;">
+                                                        <asp:ImageButton Width="20" ImageUrl="~/Content/Image/search_icon.png" ID="btnView" class="iconColor" CommandName="view" runat="server" CommandArgument='<%# Eval("Id") %>' />
+                                                    </a>
+                                                </td>
 
-                                            <td>
-                                                <asp:Label runat="server"> <%# DataBinder.Eval(Container.DataItem, "Cotas") %></asp:Label>
-                                            </td>
+                                                <td style="width: 150px;">
+                                                    <asp:Label runat="server"> <%# DataBinder.Eval(Container.DataItem, "Data") %></asp:Label>
 
-                                            <td>
-                                                <asp:Label runat="server"> <%# DataBinder.Eval(Container.DataItem, "TipoOrdem") %></asp:Label>
-                                            </td>
-                                            <td>
-                                                <button class="iconColor" style="float: right !important;">
-                                                    <i class="fas fa-angle-down"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                             <div class="accordion-body">
-                                            <table>
-                                                <tr>
-                                                    <td>
-                                                        <asp:Label runat="server">Hora:&nbsp <%# DataBinder.Eval(Container.DataItem, "Hora") %></asp:Label>
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label runat="server">CNPJ:&nbsp <%# DataBinder.Eval(Container.DataItem, "Cnpj") %></asp:Label>
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label runat="server">Preço da Cota:&nbsp <%# DataBinder.Eval(Container.DataItem, "Preco") %></asp:Label>
-                                                    </td>
+                                                </td>
 
-                                                    <td>
-                                                        <asp:Label runat="server">Classificação de Risco:&nbsp <%# DataBinder.Eval(Container.DataItem, "Risco") %></asp:Label>
-                                                    </td>
-                                                </tr>
+                                                <td style="width: 250px;" colspan="4">
+                                                    <asp:Label runat="server"> <%# DataBinder.Eval(Container.DataItem, "Aplicacao") %></asp:Label>
+                                                </td>
 
-                                                <%-- linha 02 --%>
-                                                <tr>
-                                                    <td>
-                                                        <asp:Label runat="server">Tipo:&nbsp <%# DataBinder.Eval(Container.DataItem, "Hora") %></asp:Label>
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label runat="server">Tipo:&nbsp <%# DataBinder.Eval(Container.DataItem, "Tipo") %></asp:Label>
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label runat="server">Valor Total:&nbsp <%# DataBinder.Eval(Container.DataItem, "ValorTotal") %></asp:Label>
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label runat="server">Segmento:&nbsp <%# DataBinder.Eval(Container.DataItem, "ValorTotal") %></asp:Label>
-                                                    </td>
-                                                </tr>
+                                                <td>
+                                                    <asp:Label runat="server"> <%# DataBinder.Eval(Container.DataItem, "Cotas") %></asp:Label>
+                                                </td>
 
-                                                <%-- linha 02 --%>
-                                                <tr>
-                                                    <td>
-                                                        <asp:Label runat="server">Tipo:&nbsp <%# DataBinder.Eval(Container.DataItem, "Hora") %></asp:Label>
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label runat="server">Tipo:&nbsp <%# DataBinder.Eval(Container.DataItem, "Tipo") %></asp:Label>
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label runat="server">Cateira:&nbsp <%# DataBinder.Eval(Container.DataItem, "Cateira") %></asp:Label>
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label runat="server">Gestor:&nbsp <%# DataBinder.Eval(Container.DataItem, "Gestor") %></asp:Label>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        </tr>
-                                    </table>
+                                                <td>
+                                                    <asp:Label ID="lblTipoOrdem" runat="server" Text='<%#Eval("TipoOrdem")%>'></asp:Label>
+                                                </td>
+
+                                                <td>
+                                                    <button class="iconColor" style="float: right !important;">
+                                                        <i class="fas fa-angle-down"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="accordion-body">
+                                                    <table>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:Label runat="server">Hora:&nbsp <%# DataBinder.Eval(Container.DataItem, "Hora") %></asp:Label>
+                                                            </td>
+
+                                                            <td>
+                                                                <asp:Label runat="server">CNPJ:&nbsp <%# DataBinder.Eval(Container.DataItem, "Cnpj") %></asp:Label>
+                                                            </td>
+
+                                                            <td>
+                                                                <asp:Label runat="server">Preço da Cota:&nbsp <%# DataBinder.Eval(Container.DataItem, "Preco") %></asp:Label>
+                                                            </td>
+
+                                                            <td>
+                                                                <asp:Label runat="server">Classificação de Risco:&nbsp <%# DataBinder.Eval(Container.DataItem, "Risco") %></asp:Label>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <%-- linha 02 --%>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:Label runat="server">Tipo:&nbsp <%# DataBinder.Eval(Container.DataItem, "Hora") %></asp:Label>
+                                                            </td>
+
+                                                            <td>
+                                                                <asp:Label runat="server">Tipo:&nbsp <%# DataBinder.Eval(Container.DataItem, "Tipo") %></asp:Label>
+                                                            </td>
+
+                                                            <td>
+                                                                <asp:Label runat="server">Valor Total:&nbsp <%# DataBinder.Eval(Container.DataItem, "ValorTotal") %></asp:Label>
+                                                            </td>
+
+                                                            <td>
+                                                                <asp:Label runat="server">Segmento:&nbsp <%# DataBinder.Eval(Container.DataItem, "ValorTotal") %></asp:Label>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <%-- linha 02 --%>
+                                                        <tr>
+
+                                                            <td>
+                                                                <asp:Label runat="server">Tipo:&nbsp <%# DataBinder.Eval(Container.DataItem, "Hora") %></asp:Label>
+                                                            </td>
+
+                                                            <td>
+                                                                <asp:Label runat="server">Tipo:&nbsp <%# DataBinder.Eval(Container.DataItem, "Tipo") %></asp:Label>
+                                                            </td>
+
+                                                            <td>
+                                                                <asp:Label runat="server">Cateira:&nbsp <%# DataBinder.Eval(Container.DataItem, "Cateira") %></asp:Label>
+                                                            </td>
+
+                                                            <td>
+                                                                <asp:Label runat="server">Gestor:&nbsp <%# DataBinder.Eval(Container.DataItem, "Gestor") %></asp:Label>
+                                                            </td>
+
+                                                        </tr>
+                                                    </table>
+                                            </tr>
+                                        </table>
+
+                                    </div>
 
                                 </div>
-
-                            </div>
-                            </div>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </tr>
-            </table>
-
-
-        </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </tr>
+                </table>
+            </div>
     </form>
 
     <script src="Scripts/accordion.js"></script>

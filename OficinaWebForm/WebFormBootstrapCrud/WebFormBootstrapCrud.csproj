@@ -107,6 +107,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Accordion.aspx" />
+    <Content Include="Accordion_2.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\accordion.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -657,6 +658,13 @@
     </Compile>
     <Compile Include="Accordion.aspx.designer.cs">
       <DependentUpon>Accordion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accordion_2.aspx.cs">
+      <DependentUpon>Accordion_2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accordion_2.aspx.designer.cs">
+      <DependentUpon>Accordion_2.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
